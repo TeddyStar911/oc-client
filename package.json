@@ -9,6 +9,7 @@
     "test": "ng test",
     "heroku-postbuild": "ng build",
     "lint": "ng lint",
+    "test:ci": "npm test -- --watch=false --browsers=ChromeHeadless",
     "prepare": "npm run build --if-present && npm run lint && npx prettier --write . && ng test --watch=false"
   },
   "husky": {
