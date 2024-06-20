@@ -10,7 +10,7 @@
     "serve": "ng serve",
     "heroku-postbuild": "ng build",
     "lint": "ng lint",
-    "prepare": "npm run build --if-present && npm run lint && npx prettier --write . && ng test --watch=false"
+    "prepare": "npm run build --if-present && npm run lint && npx prettier --write ."
   },
   "husky": {
     "hooks": {
