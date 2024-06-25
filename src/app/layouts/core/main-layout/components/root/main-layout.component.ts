@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../../../Elements/Header/Components/header/header.component';
+import { HeaderComponent } from '@layouts/elements/header/components/root/header.component';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from '../../../../Elements/Footer/Components/footer/footer.component';
+import { FooterComponent } from '@layouts/elements/footer/components/root/footer.component';
 
 @Component({
   selector: 'oc-client-main-layout',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '@layouts/Elements/Header/Components/header/header.component';
+import { HeaderComponent } from '@layouts/elements/header/components/root/header.component';
 import { MatListModule } from '@angular/material/list';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MainLayoutComponent } from '@layouts/Core/MainLayout/Components/main-layout/main-layout.component';
+import { MainLayoutComponent } from '@layouts/core/main-layout/components/root/main-layout.component';
 
 @Component({
   selector: 'oc-client-home',
