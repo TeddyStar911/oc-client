@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { CartComponent } from '@layouts/elements/header/components/cart/cart.component';
+import { LogoComponent } from '@layouts/elements/header/components/logo/logo.component';
+import { HeaderMenuComponent } from '@layouts/elements/header/components/header-menu/header-menu.component';
 
 @Component({
   selector: 'oc-client-header',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [CartComponent, LogoComponent, HeaderMenuComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
