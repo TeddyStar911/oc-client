@@ -6,12 +6,16 @@
     <div class="py-16">
       <h2 class="text-main text-center text-4xl font-bold">Best Seller</h2>
       <div class="grid grid-cols-4 gap-8 px-96 py-16">
-        @for(product of result.data; track product.id) {
+        @for (product of result.data; track product.id) {
           <div class="flex justify-center">
             <div class="border border-main rounded p-8">
-              <a routerLink="/product/{{product.name}}">
-                <img src="{{product.images[0].src}}" alt="Product Image" class="h-72 w-52" />
-                <p class="text-center mt-4">{{product.name}}</p>
+              <a routerLink="/product/{{ product.name }}">
+                <img
+                  src="{{ product.images[0].src }}"
+                  alt="Product Image"
+                  class="h-72 w-52"
+                />
+                <p class="text-center mt-4">{{ product.name }}</p>
               </a>
             </div>
           </div>

@@ -10,10 +10,8 @@ export class CategoryService {
   private readonly httpClient = inject(HttpClient);
   private readonly query = injectQuery();
   private readonly authHeader = this.createBasicAuthHeader(
-    process.env['WP_API_PASSWORD'] ||
-      'ck_f2ee1ac6be680138cec609ebd77c2078ec1fd370',
-    process.env['WP_API_USERNAME'] ||
-      'cs_46c88cfbbdcbd8f7c919250e113cf05fd4a2fc0d',
+    'ck_f2ee1ac6be680138cec609ebd77c2078ec1fd370',
+    'cs_46c88cfbbdcbd8f7c919250e113cf05fd4a2fc0d',
   );
   constructor() {}
 
