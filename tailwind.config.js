@@ -2,9 +2,16 @@
 module.exports = {
   content: ["./src/**/*.{html,js,ts,scss}"],
   theme: {
+    container: {
+      center: true,
+      padding: "16px",
+      width: "1392px",
+    },
     extend: {
       colors: {
         main: "#10594e",
+        error: "#da3232",
+        "secondary-price": "#8f0707",
       },
     },
   },

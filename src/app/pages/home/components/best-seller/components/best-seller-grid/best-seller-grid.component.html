@@ -1,0 +1,5 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
+  @for (product of products; track product.id) {
+    <oc-client-product-tile [product]="product"></oc-client-product-tile>
+  }
+</div>
