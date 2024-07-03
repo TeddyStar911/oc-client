@@ -1,0 +1,22 @@
+@if (products$ | async; as result) {
+  @if (result.isLoading) {
+    <oc-client-loader></oc-client-loader>
+  }
+  @if (result.isSuccess) {
+    <div class="relative">
+      <img
+        src="https://usprep.naturessunshine.com/cdn-cgi/image/width=1920,height=auto,format=webp,quality=80,fit=contain/contentassets/2b43f4a2f46148a08986fe06460faf74/earthday_web.webp"
+        alt="Home Banner"
+        class="w-full"
+      />
+      <a routerLink="/product/{{ mainProduct?.name }}">
+        <oc-client-button [classes]="'w-60 font-bold uppercase absolute bottom-16 left-1/2 transform -translate-x-1/2'">Detail</oc-client-button>
+      </a>
+    </div>
+  }
+  @if (result.isError) {
+    <oc-client-error-loading-data
+      [message]="'Failed loading Home Main Products'"
+    ></oc-client-error-loading-data>
+  }
+}

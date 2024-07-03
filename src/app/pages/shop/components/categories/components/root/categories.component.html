@@ -1,0 +1,16 @@
+@if (categories$ | async; as result) {
+  @if (result.isLoading) {
+    <p>Loading</p>
+  }
+  @if (result.isSuccess) {
+    <mat-list>
+      @for (category of result.data; track category.id) {
+        <mat-list-item>{{ category.name }}</mat-list-item>
+        <mat-divider></mat-divider>
+      }
+    </mat-list>
+  }
+  @if (result.isError) {
+    <p>Error</p>
+  }
+}

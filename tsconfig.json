@@ -23,7 +23,9 @@
     "baseUrl": "./src",
     "paths": {
       "@layouts/*": ["app/layouts/*"],
-      "@pages/*": ["app/pages/*"]
+      "@pages/*": ["app/pages/*"],
+      "@includes/*": ["app/includes/*"],
+      "@core/*": ["app/core/*"]
     }
   },
   "angularCompilerOptions": {
