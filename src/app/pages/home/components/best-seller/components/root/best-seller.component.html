@@ -5,10 +5,14 @@
   @if (result.isSuccess) {
     <div class="container py-16">
       <h2 class="text-main text-center text-4xl font-bold">Best Seller</h2>
-      <oc-client-best-seller-grid [products]="result.data"></oc-client-best-seller-grid>
+      <oc-client-best-seller-grid
+        [products]="result.data"
+      ></oc-client-best-seller-grid>
     </div>
   }
   @if (result.isError) {
-    <oc-client-error-loading-data [message]="'Failed loading Best Seller Products'"></oc-client-error-loading-data>
+    <oc-client-error-loading-data
+      [message]="'Failed loading Best Seller Products'"
+    ></oc-client-error-loading-data>
   }
 }

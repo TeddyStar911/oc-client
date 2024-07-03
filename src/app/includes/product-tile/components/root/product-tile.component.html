@@ -1,9 +1,16 @@
 <div class="flex justify-center">
   <div class="border border-main rounded p-8">
     <a routerLink="/product/{{ product?.name }}">
-      <oc-client-product-tile-image [productImages]="product?.images || []"></oc-client-product-tile-image>
-      <oc-client-product-tile-name [productName]="product?.name || ''"></oc-client-product-tile-name>
-      <oc-client-product-tile-prices [regularPrice]="product?.regular_price" [price]="product?.price"></oc-client-product-tile-prices>
+      <oc-client-product-tile-image
+        [productImages]="product?.images || []"
+      ></oc-client-product-tile-image>
+      <oc-client-product-tile-name
+        [productName]="product?.name || ''"
+      ></oc-client-product-tile-name>
+      <oc-client-product-tile-prices
+        [regularPrice]="product?.regular_price"
+        [price]="product?.price"
+      ></oc-client-product-tile-prices>
     </a>
   </div>
 </div>

@@ -8,10 +8,9 @@ describe('ErrorLoadingDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErrorLoadingDataComponent]
-    })
-    .compileComponents();
-    
+      imports: [ErrorLoadingDataComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ErrorLoadingDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

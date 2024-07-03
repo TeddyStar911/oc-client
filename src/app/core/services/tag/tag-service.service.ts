@@ -2,11 +2,12 @@ import { inject, Injectable } from '@angular/core';
 import { injectQuery } from '@ngneat/query';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '@core/types/product/product';
+import { GET_TAG_BY_ID_QUERY } from '@core/constants/query/query-keys';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BestSellerService {
+export class TagService {
   private readonly httpClient = inject(HttpClient);
   private readonly query = injectQuery();
   private readonly authHeader = this.createBasicAuthHeader(
@@ -25,12 +26,12 @@ export class BestSellerService {
     });
   }
 
-  getBestSeller() {
+  getTagById(id: number) {
     return this.query({
-      queryKey: ['best-seller'] as const,
+      queryKey: [GET_TAG_BY_ID_QUERY + id] as const,
       queryFn: () => {
         return this.httpClient.get<Product[]>(
-          'https://cms.shop-ua.site/wp-json/wc/v3/products?tag=22',
+          `https://cms.shop-ua.site/wp-json/wc/v3/products?tag=${id}`,
           { headers: this.authHeader },
         );
       },

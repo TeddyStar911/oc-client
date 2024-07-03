@@ -8,10 +8,9 @@ describe('BestSellerGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BestSellerGridComponent]
-    })
-    .compileComponents();
-    
+      imports: [BestSellerGridComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BestSellerGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

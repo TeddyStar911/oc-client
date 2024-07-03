@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         main: "#10594e",
+        "hover-main": "#126e5d",
         error: "#da3232",
         "secondary-price": "#8f0707",
       },
