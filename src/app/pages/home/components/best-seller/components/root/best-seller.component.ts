@@ -9,7 +9,7 @@ import { LoaderComponent } from '@includes/loader/components/root/loader.compone
 import { ProductTileComponent } from '@includes/product-tile/components/root/product-tile.component';
 import { ErrorLoadingDataComponent } from '@includes/error-loading-data/components/root/error-loading-data.component';
 import { BestSellerGridComponent } from '@pages/home/components/best-seller/components/best-seller-grid/best-seller-grid.component';
-import { TagService } from '@core/services/tag/tag-service.service';
+import { ProductService } from '@core/services/product/product.service';
 
 @Component({
   selector: 'oc-client-best-seller',
@@ -28,10 +28,11 @@ import { TagService } from '@core/services/tag/tag-service.service';
   templateUrl: './best-seller.component.html',
 })
 export class BestSellerComponent implements OnInit {
-  tagService = inject(TagService);
+  productService = inject(ProductService);
   public products$: ObservableQueryResult<Product[]> | undefined;
 
   ngOnInit(): void {
-    this.products$ = this.tagService.getTagById(22).result$;
+    this.products$ = this.productService.getProductsByTag(22).result$;
+    this.products$.subscribe((r) => console.log(r.data, 'Best Seller '));
   }
 }
