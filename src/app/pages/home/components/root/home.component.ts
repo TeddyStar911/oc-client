@@ -14,6 +14,5 @@ import { BestSellerComponent } from '@pages/home/components/best-seller/componen
     BestSellerComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
 })
 export class HomeComponent {}

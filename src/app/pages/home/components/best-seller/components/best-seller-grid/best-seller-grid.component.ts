@@ -7,7 +7,6 @@ import { Product } from '@core/types/product/product';
   standalone: true,
   imports: [ProductTileComponent],
   templateUrl: './best-seller-grid.component.html',
-  styleUrl: './best-seller-grid.component.scss',
 })
 export class BestSellerGridComponent {
   @Input() products?: Product[];

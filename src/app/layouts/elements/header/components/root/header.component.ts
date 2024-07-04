@@ -8,6 +8,5 @@ import { HeaderMenuComponent } from '@layouts/elements/header/components/header-
   standalone: true,
   imports: [CartComponent, LogoComponent, HeaderMenuComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {}

@@ -14,6 +14,5 @@ import { CategoriesComponent } from '@pages/shop/components/categories/component
     CategoriesComponent,
   ],
   templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.scss',
 })
 export class MainLayoutComponent {}

@@ -6,7 +6,6 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [NgIf],
   templateUrl: './product-tile-prices.component.html',
-  styleUrl: './product-tile-prices.component.scss',
 })
 export class ProductTilePricesComponent {
   @Input() regularPrice?: number;
