@@ -3,6 +3,7 @@ import { injectQuery } from '@ngneat/query';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '@core/types/product/product';
 import { GET_TAG_BY_ID_QUERY } from '@core/constants/query/query-keys';
+import { environment } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,8 @@ export class TagService {
   private readonly httpClient = inject(HttpClient);
   private readonly query = injectQuery();
   private readonly authHeader = this.createBasicAuthHeader(
-    'ck_f2ee1ac6be680138cec609ebd77c2078ec1fd370',
-    'cs_46c88cfbbdcbd8f7c919250e113cf05fd4a2fc0d',
+    environment.WP_API_USERNAME,
+    environment.WP_API_PASSWORD,
   );
   constructor() {}
 
@@ -31,7 +32,7 @@ export class TagService {
       queryKey: [GET_TAG_BY_ID_QUERY + id] as const,
       queryFn: () => {
         return this.httpClient.get<Product[]>(
-          `https://cms.shop-ua.site/wp-json/wc/v3/products?tag=${id}`,
+          `${environment.BASE_WP_API_URL}/products?tag=${id}`,
           { headers: this.authHeader },
         );
       },
