@@ -6,7 +6,6 @@ import { ProductImage } from '@core/types/product/product-image';
   standalone: true,
   imports: [],
   templateUrl: './product-tile-image.component.html',
-  styleUrl: './product-tile-image.component.scss',
 })
 export class ProductTileImageComponent implements OnInit {
   @Input() productImages: ProductImage[] = [];

@@ -26,7 +26,6 @@ import { TagService } from '@core/services/tag/tag-service.service';
     BestSellerGridComponent,
   ],
   templateUrl: './best-seller.component.html',
-  styleUrl: './best-seller.component.scss',
 })
 export class BestSellerComponent implements OnInit {
   tagService = inject(TagService);

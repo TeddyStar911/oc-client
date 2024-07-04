@@ -6,6 +6,5 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './logo.component.html',
-  styleUrl: './logo.component.scss',
 })
 export class LogoComponent {}

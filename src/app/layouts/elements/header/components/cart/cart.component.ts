@@ -6,6 +6,5 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [MatIcon],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss',
 })
 export class CartComponent {}

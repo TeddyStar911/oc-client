@@ -6,6 +6,5 @@ import { MainLayoutComponent } from '@layouts/core/main-layout/components/root/m
   standalone: true,
   imports: [MainLayoutComponent],
   templateUrl: './shop.component.html',
-  styleUrl: './shop.component.scss',
 })
 export class ShopComponent {}

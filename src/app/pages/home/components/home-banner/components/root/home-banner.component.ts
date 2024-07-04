@@ -21,7 +21,6 @@ import { TagService } from '@core/services/tag/tag-service.service';
     LoaderComponent,
   ],
   templateUrl: './home-banner.component.html',
-  styleUrl: './home-banner.component.scss',
 })
 export class HomeBannerComponent implements OnInit {
   tagService = inject(TagService);

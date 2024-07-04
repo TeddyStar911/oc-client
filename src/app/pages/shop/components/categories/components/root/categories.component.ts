@@ -11,7 +11,6 @@ import { MatDividerModule } from '@angular/material/divider';
   standalone: true,
   imports: [AsyncPipe, NgForOf, MatListModule, MatDividerModule],
   templateUrl: './categories.component.html',
-  styleUrl: './categories.component.scss',
 })
 export class CategoriesComponent implements OnInit {
   categoryService = inject(CategoryService);
