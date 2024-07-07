@@ -5,7 +5,10 @@
   @if (result.isSuccess) {
     <div class="border border-gray-border-color rounded p-4">
       @for (category of result.data; track category.id) {
-        <oc-client-category-item [name]="category.name" [id]="category.id"></oc-client-category-item>
+        <oc-client-category-item
+          [name]="category.name"
+          [id]="category.id"
+        ></oc-client-category-item>
       }
     </div>
   }

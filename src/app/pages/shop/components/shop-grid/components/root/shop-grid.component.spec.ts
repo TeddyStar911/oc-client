@@ -8,10 +8,9 @@ describe('ShopGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShopGridComponent]
-    })
-    .compileComponents();
-    
+      imports: [ShopGridComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ShopGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

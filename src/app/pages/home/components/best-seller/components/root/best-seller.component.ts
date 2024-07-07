@@ -10,6 +10,7 @@ import { ProductTileComponent } from '@includes/product-tile/components/root/pro
 import { ErrorLoadingDataComponent } from '@includes/error-loading-data/components/root/error-loading-data.component';
 import { BestSellerGridComponent } from '@pages/home/components/best-seller/components/best-seller-grid/best-seller-grid.component';
 import { ProductService } from '@core/services/product/product.service';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'oc-client-best-seller',
@@ -32,7 +33,8 @@ export class BestSellerComponent implements OnInit {
   public products$: ObservableQueryResult<Product[]> | undefined;
 
   ngOnInit(): void {
-    this.products$ = this.productService.getProductsByTag(22).result$;
-    this.products$.subscribe((r) => console.log(r.data, 'Best Seller '));
+    this.products$ = this.productService.getProductsByTag(
+      environment.BEST_SELLER_TAG_ID,
+    ).result$;
   }
 }

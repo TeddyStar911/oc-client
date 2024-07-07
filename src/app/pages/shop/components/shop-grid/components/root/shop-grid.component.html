@@ -1,13 +1,20 @@
-@if (products$ | async; as result) {
+@if (result$ | async; as result) {
   @if (result.isLoading) {
     <oc-client-loader></oc-client-loader>
   }
   @if (result.isSuccess) {
-    <div class="border border-gray-border-color rounded p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      @for (product of result.data; track product.id) {
+    <div
+      class="border border-gray-border-color rounded p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+    >
+      @for (product of products; track product.id) {
         <oc-client-product-tile [product]="product"></oc-client-product-tile>
       }
     </div>
+    <ng-container *ngIf="displayLoadMoreButton">
+      <div class="flex justify-center mt-8">
+        <oc-client-button (click)="showAllProducts()">Load All</oc-client-button>
+      </div>
+    </ng-container>
   }
   @if (result.isError) {
     <oc-client-error-loading-data

@@ -3,6 +3,7 @@ import { injectQuery } from '@ngneat/query';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '@core/types/product/product';
 import {
+  GET_PRODUCT,
   GET_PRODUCTS,
   GET_TAG_BY_ID_QUERY,
 } from '@core/constants/query/query-keys';
@@ -17,9 +18,9 @@ export class ProductService {
   private readonly authHeaderService = inject(AuthHeaderService);
   private readonly query = injectQuery();
 
-  getProducts(categoryId: string) {
+  getProducts(categoryId: string, count: string) {
     const baseUrl = `${environment.BASE_WP_API_URL}/products`;
-    const params = new URLSearchParams({ per_page: '100' });
+    const params = new URLSearchParams({ per_page: count });
 
     if (categoryId) {
       params.append('category', categoryId);
@@ -28,9 +29,22 @@ export class ProductService {
     const fullUrl = `${baseUrl}?${params.toString()}`;
 
     return this.query({
-      queryKey: [GET_PRODUCTS] as const,
+      queryKey: [GET_PRODUCTS, categoryId] as const,
       queryFn: () => {
         return this.httpClient.get<Product[]>(fullUrl, {
+          headers: this.authHeaderService.authHeader,
+        });
+      },
+    });
+  }
+
+  getProductById(productId: string) {
+    const baseUrl = `${environment.BASE_WP_API_URL}/products/${productId}`;
+
+    return this.query({
+      queryKey: [GET_PRODUCT, productId] as const,
+      queryFn: () => {
+        return this.httpClient.get<Product>(baseUrl, {
           headers: this.authHeaderService.authHeader,
         });
       },
