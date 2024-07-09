@@ -3,13 +3,22 @@ import { CategoryService } from '@pages/shop/components/categories/core/services
 import { AsyncPipe, NgForOf } from '@angular/common';
 import { ObservableQueryResult } from '@ngneat/query';
 import { Category } from '@pages/shop/components/categories/core/types/category/category';
-import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
+import { RouterLink } from '@angular/router';
+import { CategoryItemComponent } from '@pages/shop/components/categories/components/category-item/category-item.component';
+import { LoaderComponent } from '@includes/loader/components/root/loader.component';
+import { ErrorLoadingDataComponent } from '@includes/error-loading-data/components/root/error-loading-data.component';
 
 @Component({
   selector: 'oc-client-categories',
   standalone: true,
-  imports: [AsyncPipe, NgForOf, MatListModule, MatDividerModule],
+  imports: [
+    AsyncPipe,
+    NgForOf,
+    RouterLink,
+    CategoryItemComponent,
+    LoaderComponent,
+    ErrorLoadingDataComponent,
+  ],
   templateUrl: './categories.component.html',
 })
 export class CategoriesComponent implements OnInit {
@@ -18,6 +27,5 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.categories$ = this.categoryService.getCategories().result$;
-    /* this.categories$.subscribe((r) => console.log(r.data));*/
   }
 }

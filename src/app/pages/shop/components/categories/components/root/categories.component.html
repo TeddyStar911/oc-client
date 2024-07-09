@@ -1,16 +1,20 @@
 @if (categories$ | async; as result) {
   @if (result.isLoading) {
-    <p>Loading</p>
+    <oc-client-loader></oc-client-loader>
   }
   @if (result.isSuccess) {
-    <mat-list>
+    <div class="border border-gray-border-color rounded p-4">
       @for (category of result.data; track category.id) {
-        <mat-list-item>{{ category.name }}</mat-list-item>
-        <mat-divider></mat-divider>
+        <oc-client-category-item
+          [name]="category.name"
+          [id]="category.id"
+        ></oc-client-category-item>
       }
-    </mat-list>
+    </div>
   }
   @if (result.isError) {
-    <p>Error</p>
+    <oc-client-error-loading-data
+      [message]="'Failed loading Categories'"
+    ></oc-client-error-loading-data>
   }
 }

@@ -9,4 +9,5 @@ import { NgClass } from '@angular/common';
 })
 export class ButtonComponent {
   @Input() classes?: string;
+  @Input() click: () => void;
 }
