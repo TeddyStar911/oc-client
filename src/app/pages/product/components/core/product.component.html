@@ -4,7 +4,14 @@
       <oc-client-loader></oc-client-loader>
     }
     @if (result.isSuccess) {
-      <div>{{result.data.name}}</div>
+      <div class="container min-h-screen py-16 grid grid-cols-12 gap-16">
+        <div class="lg:col-span-4 col-span-12">
+          <oc-client-product-gallery [gallery]="result.data.images"></oc-client-product-gallery>
+        </div>
+        <div class="lg:col-span-6 col-span-12">
+          <oc-client-product-body [product]="result.data"></oc-client-product-body>
+        </div>
+      </div>
     }
     @if (result.isError) {
       <oc-client-error-loading-data
