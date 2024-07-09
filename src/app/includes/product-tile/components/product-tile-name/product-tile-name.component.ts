@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './product-tile-name.component.html',
 })
 export class ProductTileNameComponent {
-  @Input() productName?: string;
+  @Input() productName: string;
 }

@@ -8,6 +8,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './category-item.component.html',
 })
 export class CategoryItemComponent {
-  @Input() name?: string;
-  @Input() id?: number;
+  @Input() name: string;
+  @Input() id: number;
 }

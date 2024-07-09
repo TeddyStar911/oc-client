@@ -5,8 +5,8 @@ import { ObservableQueryResult } from '@ngneat/query';
 import { Category } from '@pages/shop/components/categories/core/types/category/category';
 import { RouterLink } from '@angular/router';
 import { CategoryItemComponent } from '@pages/shop/components/categories/components/category-item/category-item.component';
-import { LoaderComponent } from '@includes/loader/components/root/loader.component';
-import { ErrorLoadingDataComponent } from '@includes/error-loading-data/components/root/error-loading-data.component';
+import { LoaderComponent } from '@includes/loader/loader.component';
+import { ErrorLoadingDataComponent } from '@includes/error-loading-data/error-loading-data.component';
 
 @Component({
   selector: 'oc-client-categories',

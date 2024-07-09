@@ -8,6 +8,6 @@ import { NgIf } from '@angular/common';
   templateUrl: './product-tile-prices.component.html',
 })
 export class ProductTilePricesComponent {
-  @Input() regularPrice?: number;
-  @Input() price?: number;
+  @Input() regularPrice: number;
+  @Input() price: number;
 }

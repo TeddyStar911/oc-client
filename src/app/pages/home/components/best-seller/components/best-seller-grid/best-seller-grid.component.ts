@@ -9,5 +9,5 @@ import { Product } from '@core/types/product/product';
   templateUrl: './best-seller-grid.component.html',
 })
 export class BestSellerGridComponent {
-  @Input() products?: Product[];
+  @Input() products: Product[];
 }

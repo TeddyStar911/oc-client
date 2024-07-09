@@ -8,6 +8,6 @@ import { NgClass } from '@angular/common';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
-  @Input() classes?: string;
   @Input() click: () => void;
+  @Input() classes?: string;
 }
