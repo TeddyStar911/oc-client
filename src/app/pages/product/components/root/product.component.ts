@@ -34,11 +34,13 @@ import { ProductDescriptionComponent } from '@pages/product/components/product-d
 export class ProductComponent implements OnInit {
   productService = inject(ProductService);
   public result$: ObservableQueryResult<Product>;
+  public isVariableProduct: boolean;
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     const productId = this.route.snapshot.paramMap.get('id');
     this.result$ = this.productService.getProductById(productId || '').result$;
-    this.result$.subscribe((r) => console.log(r.data));
+    this.result$.subscribe((r) => console.log(r.data, 'Product'));
   }
 }

@@ -5,16 +5,23 @@
     }
     @if (result.isSuccess) {
       <div class="container min-h-screen py-16 flex flex-col gap-16">
-        <div class="grid grid-cols-12 gap-16">
+        <div class="grid grid-cols-12 gap-32">
           <div class="lg:col-span-6 col-span-12">
-            <oc-client-product-gallery [gallery]="result.data.images"></oc-client-product-gallery>
+            <oc-client-product-gallery
+              [gallery]="result.data.images"
+            ></oc-client-product-gallery>
           </div>
           <div class="lg:col-span-6 col-span-12">
-            <oc-client-product-body [product]="result.data"></oc-client-product-body>
+            <oc-client-product-body
+              [product]="result.data"
+              [isVariableProduct]="isVariableProduct"
+            ></oc-client-product-body>
           </div>
         </div>
         <div>
-          <oc-client-product-description [description]="result.data.description"></oc-client-product-description>
+          <oc-client-product-description
+            [description]="result.data.description"
+          ></oc-client-product-description>
         </div>
       </div>
     }

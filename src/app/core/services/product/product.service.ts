@@ -6,9 +6,11 @@ import {
   GET_PRODUCT,
   GET_PRODUCTS,
   GET_TAG_BY_ID_QUERY,
+  GET_VARIATIONS,
 } from '@core/constants/query/query-keys';
 import { environment } from '@environments/environment';
 import { AuthHeaderService } from '@core/services/auth-header/auth-header.service';
+import { ProductVariation } from '@core/types/product/product-variation';
 
 @Injectable({
   providedIn: 'root',
@@ -45,6 +47,19 @@ export class ProductService {
       queryKey: [GET_PRODUCT, productId] as const,
       queryFn: () => {
         return this.httpClient.get<Product>(baseUrl, {
+          headers: this.authHeaderService.authHeader,
+        });
+      },
+    });
+  }
+
+  getProductVariations(productId: string) {
+    const baseUrl = `${environment.BASE_WP_API_URL}/products/${productId}/variations`;
+
+    return this.query({
+      queryKey: [GET_VARIATIONS, productId] as const,
+      queryFn: () => {
+        return this.httpClient.get<ProductVariation[]>(baseUrl, {
           headers: this.authHeaderService.authHeader,
         });
       },
