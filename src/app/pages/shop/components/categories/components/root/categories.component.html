@@ -1,16 +1,24 @@
 @if (categories$ | async; as result) {
-  @if (result.isLoading) {
-    <oc-client-loader></oc-client-loader>
-  }
   @if (result.isSuccess) {
-    <div class="border border-gray-border-color rounded p-4">
+    <h2 class="mb-4">Categories</h2>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="flex flex-col my-4 items-start"
+      [(ngModel)]="category"
+      (ngModelChange)="onCategoryChange($event)"
+    >
+      <oc-client-category-item
+        [name]="'All'"
+        [id]="''"
+        [checked]="true"
+      ></oc-client-category-item>
       @for (category of result.data; track category.id) {
         <oc-client-category-item
           [name]="category.name"
-          [id]="category.id"
+          [id]="category.id.toString()"
         ></oc-client-category-item>
       }
-    </div>
+    </mat-radio-group>
   }
   @if (result.isError) {
     <oc-client-error-loading-data

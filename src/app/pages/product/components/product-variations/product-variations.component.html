@@ -1,5 +1,12 @@
-<mat-radio-group aria-label="Select an variation" class="flex items-center gap-6 mt-4">
+<mat-radio-group
+  aria-label="Select an variation"
+  class="flex items-center gap-6 mt-4"
+>
   @for (variation of variations; track variation.id) {
-    <mat-radio-button value="{{variation.sku}}" checked="{{variation.sku === variationStateService.activeVariationSku}}">{{variation.name}}</mat-radio-button>
+    <mat-radio-button
+      value="{{ variation.sku }}"
+      checked="{{ variation.sku === variationStateService.activeVariationSku }}"
+      >{{ variation.name }}</mat-radio-button
+    >
   }
 </mat-radio-group>

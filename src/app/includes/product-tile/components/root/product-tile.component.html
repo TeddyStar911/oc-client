@@ -1,5 +1,8 @@
 <div class="flex justify-center">
-  <div class="border border-main rounded p-8">
+  <div
+    class="border border-gray-border-color rounded bg-gray-background-color"
+    [ngClass]="classes"
+  >
     <a [routerLink]="['/product', product.id, product.name]">
       <oc-client-product-tile-image
         [productImages]="product.images || []"

@@ -21,4 +21,5 @@ import { ProductTileImageComponent } from '@includes/product-tile/components/pro
 })
 export class ProductTileComponent {
   @Input() product: Product;
+  @Input() classes: string;
 }

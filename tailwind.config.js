@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
         main: "#10594e",
-        "gray-border-color": "border-slate-200",
+        "gray-border-color": "#E2E4E1",
+        "gray-background-color": "#f5f6f5",
         "hover-main": "#126e5d",
         error: "#da3232",
         "secondary-price": "#8f0707",
