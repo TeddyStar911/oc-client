@@ -1,13 +1,18 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MatDivider } from '@angular/material/divider';
 import { MatList, MatListItem } from '@angular/material/list';
 import { ObservableQueryResult } from '@ngneat/query';
 import { Product } from '@core/types/product/product';
 import { RouterLink } from '@angular/router';
-import { LoaderComponent } from '@includes/loader/components/root/loader.component';
+import { LoaderComponent } from '@includes/loader/loader.component';
 import { ProductTileComponent } from '@includes/product-tile/components/root/product-tile.component';
-import { ErrorLoadingDataComponent } from '@includes/error-loading-data/components/root/error-loading-data.component';
+import { ErrorLoadingDataComponent } from '@includes/error-loading-data/error-loading-data.component';
 import { BestSellerGridComponent } from '@pages/home/components/best-seller/components/best-seller-grid/best-seller-grid.component';
 import { ProductService } from '@core/services/product/product.service';
 import { environment } from '@environments/environment';
@@ -15,6 +20,7 @@ import { environment } from '@environments/environment';
 @Component({
   selector: 'oc-client-best-seller',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     AsyncPipe,
     MatDivider,
@@ -36,5 +42,6 @@ export class BestSellerComponent implements OnInit {
     this.products$ = this.productService.getProductsByTag(
       environment.BEST_SELLER_TAG_ID,
     ).result$;
+    this.products$.subscribe((r) => console.log(r));
   }
 }

@@ -1,0 +1,9 @@
+<div class="flex gap-2">
+  @for (variation of variations; track variation.id) {
+    <button (click)="onVariationChange($event, variation)" class="py-2 px-4 text-white rounded" [ngClass]="{
+      'bg-main hover:bg-hover-main': variationStateService.activeVariationSku !== variation.sku,
+      'bg-active-main': variationStateService.activeVariationSku === variation.sku
+    }">{{variation.short_name}}</button>
+  }
+</div>
+

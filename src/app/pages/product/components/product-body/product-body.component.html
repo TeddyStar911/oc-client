@@ -1,0 +1,5 @@
+<h1 class="text-xl font-bold">{{ name }}</h1>
+<div class="mt-4" *ngIf="isVariableProduct">
+  <oc-client-product-variations [variations]="product.variations"></oc-client-product-variations>
+</div>
+<p class="mt-4"><span class="font-bold">{{price}}</span> USD</p>

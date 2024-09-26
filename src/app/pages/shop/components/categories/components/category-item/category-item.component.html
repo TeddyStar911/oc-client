@@ -1,3 +1,6 @@
-<a routerLink="/shop" [queryParams]="{ category: id }">
-  <div class="border-b border-b-slate-200 p-2">{{ name }}</div>
-</a>
+<mat-radio-button
+  class="example-radio-button"
+  [value]="id"
+  [checked]="checked"
+  >{{ name }}</mat-radio-button
+>

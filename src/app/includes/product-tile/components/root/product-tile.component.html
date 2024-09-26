@@ -1,16 +1,22 @@
-<div class="flex justify-center">
-  <div class="border border-main rounded p-8">
-    <a [routerLink]="['/product', product?.id, product?.name]">
+<div class="flex justify-center h-full">
+  <div
+    class="border border-gray-border-color rounded bg-gray-background-color"
+    [ngClass]="classes"
+  >
+    <a [routerLink]="['/product', product.id, product.name]" class="flex flex-col gap-4">
       <oc-client-product-tile-image
-        [productImages]="product?.images || []"
+        [image]="image"
       ></oc-client-product-tile-image>
       <oc-client-product-tile-name
-        [productName]="product?.name || ''"
+        [name]="name"
       ></oc-client-product-tile-name>
       <oc-client-product-tile-prices
-        [regularPrice]="product?.regular_price"
-        [price]="product?.price"
+        [regularPrice]="regularPrice"
+        [price]="price"
       ></oc-client-product-tile-prices>
+      <ng-container *ngIf="isVariableProduct">
+        <oc-client-product-variations [variations]="product.variations"></oc-client-product-variations>
+      </ng-container>
     </a>
   </div>
 </div>
