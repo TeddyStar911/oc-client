@@ -1,4 +1,4 @@
-<div class="flex gap-1 justify-center mt-4">
+<div class="flex gap-1 justify-center">
   <span [class.line-through]="regularPrice !== price">{{ regularPrice }}</span>
   <ng-container *ngIf="regularPrice !== price">
     <span class="text-secondary-price">{{ price }}</span>

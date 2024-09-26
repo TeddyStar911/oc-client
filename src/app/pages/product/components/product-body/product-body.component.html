@@ -1,8 +1,5 @@
-<h1 class="text-xl font-bold">{{ product.name }}</h1>
-<ng-container *ngIf="isVariableProduct">
-  @if (variationResult$ | async; as result) {
-    <oc-client-product-variations
-      [variations]="result.data || []"
-    ></oc-client-product-variations>
-  }
-</ng-container>
+<h1 class="text-xl font-bold">{{ name }}</h1>
+<div class="mt-4" *ngIf="isVariableProduct">
+  <oc-client-product-variations [variations]="product.variations"></oc-client-product-variations>
+</div>
+<p class="mt-4"><span class="font-bold">{{price}}</span> USD</p>

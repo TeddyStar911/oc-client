@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ButtonComponent } from '@includes/button/button.component';
 import { ObservableQueryResult } from '@ngneat/query';
 import { Product } from '@core/types/product/product';
@@ -12,6 +17,7 @@ import { ProductService } from '@core/services/product/product.service';
 @Component({
   selector: 'oc-client-home-banner',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ButtonComponent,
     RouterLink,

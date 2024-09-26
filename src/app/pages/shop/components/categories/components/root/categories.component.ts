@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CategoryService } from '@pages/shop/components/categories/core/services/category.service';
 import { AsyncPipe, NgForOf } from '@angular/common';
 import { ObservableQueryResult } from '@ngneat/query';
@@ -13,6 +13,7 @@ import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 @Component({
   selector: 'oc-client-categories',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     AsyncPipe,
     NgForOf,
@@ -40,7 +41,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   onCategoryChange(category: string) {
-    console.log(category);
-    this.router.navigate(['/shop'], { queryParams: { category: category } });
+    const categoryParam = category || 'all';
+    this.router.navigate(['/shop', categoryParam]);
   }
 }

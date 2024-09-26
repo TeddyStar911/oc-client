@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CartComponent } from '@layouts/elements/header/components/cart/cart.component';
 import { LogoComponent } from '@layouts/elements/header/components/logo/logo.component';
 import { HeaderMenuComponent } from '@layouts/elements/header/components/header-menu/header-menu.component';
@@ -6,6 +6,7 @@ import { HeaderMenuComponent } from '@layouts/elements/header/components/header-
 @Component({
   selector: 'oc-client-header',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CartComponent, LogoComponent, HeaderMenuComponent],
   templateUrl: './header.component.html',
 })

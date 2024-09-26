@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MatDivider } from '@angular/material/divider';
 import { MatList, MatListItem } from '@angular/material/list';
@@ -15,6 +20,7 @@ import { environment } from '@environments/environment';
 @Component({
   selector: 'oc-client-best-seller',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     AsyncPipe,
     MatDivider,
@@ -36,5 +42,6 @@ export class BestSellerComponent implements OnInit {
     this.products$ = this.productService.getProductsByTag(
       environment.BEST_SELLER_TAG_ID,
     ).result$;
+    this.products$.subscribe((r) => console.log(r));
   }
 }

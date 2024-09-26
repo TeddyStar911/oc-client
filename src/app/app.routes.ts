@@ -6,7 +6,7 @@ import { ProductComponent } from '@pages/product/components/root/product.compone
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: 'shop/:category', component: ShopComponent },
   { path: 'product/:id/:name', component: ProductComponent },
   { path: '**', component: NotFoundComponent },
 ];

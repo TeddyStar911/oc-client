@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { ButtonComponent } from '@includes/button/button.component';
@@ -17,6 +17,7 @@ import { ProductDescriptionComponent } from '@pages/product/components/product-d
 @Component({
   selector: 'oc-client-product',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     AsyncPipe,
     ButtonComponent,
@@ -32,15 +33,16 @@ import { ProductDescriptionComponent } from '@pages/product/components/product-d
   templateUrl: './product.component.html',
 })
 export class ProductComponent implements OnInit {
-  productService = inject(ProductService);
   public result$: ObservableQueryResult<Product>;
-  public isVariableProduct: boolean;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private productService: ProductService,
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
-    const productId = this.route.snapshot.paramMap.get('id');
+    const productId = this.activatedRoute.snapshot.paramMap.get('id');
     this.result$ = this.productService.getProductById(productId || '').result$;
-    this.result$.subscribe((r) => console.log(r.data, 'Product'));
+    this.result$.subscribe((r) => console.log(r.data, 'Product2'));
   }
 }
