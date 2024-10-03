@@ -12,6 +12,7 @@ import { VariationStateService } from '@core/services/variation-state/variation-
 })
 export class ProductVariationsComponent {
   @Input() variations: ProductVariation[];
+  @Input() classes?: string;
 
   constructor(public variationStateService: VariationStateService) {}
 

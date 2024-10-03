@@ -15,7 +15,7 @@
         [price]="price"
       ></oc-client-product-tile-prices>
       <ng-container *ngIf="isVariableProduct">
-        <oc-client-product-variations [variations]="product.variations"></oc-client-product-variations>
+        <oc-client-product-variations [variations]="product.variations" [classes]="'justify-center'"></oc-client-product-variations>
       </ng-container>
     </a>
   </div>

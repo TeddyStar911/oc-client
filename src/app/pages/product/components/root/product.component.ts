@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AsyncPipe } from '@angular/common';
+import {AsyncPipe, NgIf} from '@angular/common';
 import { ButtonComponent } from '@includes/button/button.component';
 import { ErrorLoadingDataComponent } from '@includes/error-loading-data/error-loading-data.component';
 import { LoaderComponent } from '@includes/loader/loader.component';
@@ -29,6 +29,7 @@ import { ProductDescriptionComponent } from '@pages/product/components/product-d
     ProductGalleryComponent,
     ProductBodyComponent,
     ProductDescriptionComponent,
+    NgIf,
   ],
   templateUrl: './product.component.html',
 })
